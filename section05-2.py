@@ -4,7 +4,7 @@
 
 # 코딩의 핵심 -> 조건 해결 중요
 
-# 기본 반복문 : for, whole
+# 기본 반복문 : for, while
 
 v1 = 1
 while v1 < 11:
