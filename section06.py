@@ -178,6 +178,7 @@ introduceEnglishName(MyName='Jung Hayong')
 # 너가 못찾을 뿐
 # -정하용-
 
+# 예제5
 # 중첩함수(클로저)
 print()
 
@@ -194,3 +195,53 @@ nested_func(10000)
 # 데코레이터 클로저 공부해보기!!!
 # 지금은 감만 오네~
 # 오늘 공부 끝!!
+
+# 예제6(hint)
+
+
+def func_mul3(x: int) -> list:
+    y1 = x * 100
+    y2 = x * 200
+    y3 = x * 300
+    return [y1, y2, y3]
+
+
+print(func_mul3(500))
+
+# 람다식 예제
+# 람다식 : 메모리 절약, 가독성 향상, 코드 간결
+# 함수는 객체 생성 -> 리소스(메모리) 할당
+# 람다는 즉시 실행(Heap 초기화) -> 메모리 초기화
+
+# 일반적 함수 -> 변수 할당
+
+
+def mul_10(num: int) -> int:
+    return num * 10
+
+
+var_func = mul_10
+print(var_func)
+print(type(var_func))
+
+print(var_func(10))
+
+
+def lambda_mul_10(num): return num * 10
+
+
+print('>>>', lambda_mul_10(10))
+# 람다식: 람다함수를 사용함으로써 가독성, 코드를 간결하게
+# 많은 메모리가 절약되는 것은 아니지만 메모리 절약됨
+# 데이터 전처리라든지 데이터 베이스에서 게시판 데이터들을 대량으로 가져와서
+
+
+def func_final(x, y, func):
+    print(x*y*func(10))
+
+
+func_final(10, 10, lambda_mul_10)
+# 람다함수를 넣을 수도 있다
+
+print(func_final(10, 10, lambda x: x * 1000))
+# 즉시 람다식을 바로 작성해서 함수에 인자로 함수를 넘긴것을 확인할 수 있다
