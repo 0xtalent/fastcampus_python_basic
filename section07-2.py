@@ -41,8 +41,28 @@ class BenzCar(Car):
     def show_model(self) -> None:
         return "Your Car Name : %s" % self.car_name
 
+    def show(self):
+        print(super().show())
+        return 'Car Info: %s %s %s' % (self.car_name, self.type, self.color)
+
 
 # 일반 사용
 model1 = BmwCar('520d', 'sedan', 'red')
 
-print(model1.color)
+print(model1.color)  # Super에서 가져옴
+print(model1.type)  # Super에서 가져옴
+print(model1.car_name)  # Sub에서 가져옴
+print(model1.show())  # Super에서 가져옴
+print(model1.show_model())  # Sub에서 가져옴
+print(model1.__dict__)
+
+# 이해는 완전 이해 가는데, 누가 이거 활용해서 만들어봐라 하면 아직은 못만들 것 같아요
+# 더 열심히 공부하자 진도 쭉쭉 빼보자
+
+# Method Overriding(오버라이딩)
+model2 = BenzCar("220d", "suv", "black")
+print(model2.show())  # 부모에 있는 것을 모두 사용하는 것이 아니라, 자식에서 상속받을 것은 받고...
+
+# Parent Method Call
+model3 = BenzCar("350s", "sedan", "silver")
+print(model3.show())
